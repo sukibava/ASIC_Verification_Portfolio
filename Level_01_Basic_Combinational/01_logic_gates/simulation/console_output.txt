@@ -1,0 +1,11 @@
+# run 1000ns
+-----------------------------------------------
+A B | AND OR XOR NAND NOR NOT
+-----------------------------------------------
+0 0 |  0   0   0    1    1   1
+0 1 |  0   1   1    1    0   1
+1 0 |  0   1   1    1    0   0
+1 1 |  1   1   0    0    0   0
+$finish called at time : 40 ns : File "C:/Users/Mohan/Documents/ASIC_Verification_Portfolio/Level_01_Basic_Combinational/01_logic_gates/tb/logic_gates_tb.v" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'logic_gates_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
