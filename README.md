@@ -99,8 +99,8 @@ This repository documents my journey toward becoming an ASIC Design Verification
 | Project | Status |
 |---------|--------|
 | Logic Gates | ✅ Completed |
-| 2:1 Multiplexer | ⏳ In Progress |
-
+| 2:1 Multiplexer | ✅ Completed |
+| 4:1 Multiplexer | ✅ Completed |
 ---
 
 ## Goals
