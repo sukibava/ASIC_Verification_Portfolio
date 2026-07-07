@@ -4,24 +4,24 @@
 
 
 module logic_gates(
-
-    input  wire A,
-    input  wire B,
-
-    output wire AND_OUT,
-    output wire OR_OUT,
-    output wire XOR_OUT,
-    output wire NAND_OUT,
-    output wire NOR_OUT,
-    output wire NOT_OUT
-
+  input a,
+  input b,
+  output _and,
+  output _or,
+  output _nand,
+  output _nor,
+  output ex_or,
+  output ex_nor,
+  output _not
 );
-
-assign AND_OUT  = A & B;
-assign OR_OUT   = A | B;
-assign XOR_OUT  = A ^ B;
-assign NAND_OUT = ~(A & B);
-assign NOR_OUT  = ~(A | B);
-assign NOT_OUT  = ~A;
-
+  
+  assign _and = a & b;
+  assign _or = a | b;
+  assign _nand = ~(a & b);
+  assign _nor = ~(a | b);
+  assign ex_or = a ^ b;
+  assign ex_nor = ~(a ^ b);
+  assign _not = ~a;
+  
 endmodule
+

@@ -1,62 +1,31 @@
-`timescale 1ns/1ps
+module tb;
+	reg a;
+	reg b;
+	wire _and;
+    wire _or;
+    wire _nand;
+    wire _nor;
+    wire ex_or;
+    wire ex_nor;
+    wire _not;
+  
+  logic_gates dut(a,b,_and,_or,_nand,_nor,ex_or,ex_nor,_not);
 
-module logic_gates_tb;
-
-reg A;
-reg B;
-
-wire AND_OUT;
-wire OR_OUT;
-wire XOR_OUT;
-wire NAND_OUT;
-wire NOR_OUT;
-wire NOT_OUT;
-
-// DUT (Device Under Test)
-
-logic_gates dut (
-
-    .A(A),
-    .B(B),
-
-    .AND_OUT(AND_OUT),
-    .OR_OUT(OR_OUT),
-    .XOR_OUT(XOR_OUT),
-    .NAND_OUT(NAND_OUT),
-    .NOR_OUT(NOR_OUT),
-    .NOT_OUT(NOT_OUT)
-
-);
-
-initial
-begin
-
-    $display("-----------------------------------------------");
-    $display("A B | AND OR XOR NAND NOR NOT");
-    $display("-----------------------------------------------");
-
-    A=0; B=0;
-    #10;
-    $display("%b %b |  %b   %b   %b    %b    %b   %b",
-             A,B,AND_OUT,OR_OUT,XOR_OUT,NAND_OUT,NOR_OUT,NOT_OUT);
-
-    A=0; B=1;
-    #10;
-    $display("%b %b |  %b   %b   %b    %b    %b   %b",
-             A,B,AND_OUT,OR_OUT,XOR_OUT,NAND_OUT,NOR_OUT,NOT_OUT);
-
-    A=1; B=0;
-    #10;
-    $display("%b %b |  %b   %b   %b    %b    %b   %b",
-             A,B,AND_OUT,OR_OUT,XOR_OUT,NAND_OUT,NOR_OUT,NOT_OUT);
-
-    A=1; B=1;
-    #10;
-    $display("%b %b |  %b   %b   %b    %b    %b   %b",
-             A,B,AND_OUT,OR_OUT,XOR_OUT,NAND_OUT,NOR_OUT,NOT_OUT);
-
-    $finish;
-
-end
-
+	initial begin
+ 		//no need to use in vivado
+       // $dumpfile("logic_gates.vcd");
+      //$dumpvars(1,tb);
+      $display("------------------------------------------");
+      $display("AB |and|  or|nand|nor | ex_or| ex_nor |not");
+      $display("------------------------------------------");
+      $monitor("%b%b | %b |  %b |  %b |  %b | %b    | %b      |  %b | ",a,b,_and,_or,_nand,_nor,ex_or,ex_nor,_not);
+      
+      a=0;b=0;
+      #10 a=0;b=1;
+      #10 a=1;b=0;
+      #10 a=1;b=1;
+      #10 $display("------------------------------------------");
+       $finish;
+   end
 endmodule
+  
